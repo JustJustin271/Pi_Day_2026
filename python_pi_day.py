@@ -3,7 +3,7 @@ import math
 
 varitations_pie = {"pie, pi, piee, ppiee, piie, cream, creame, apple, blueberry, p, i"}
 
-pie = """
+pie_digits = """
 3
 14159265358979323846264338327950288419716939937510
 58209749445923078164062862089986280348253421170679
@@ -28,32 +28,39 @@ pie = """
 38095257201065485863278
 """
 
-raw_response = input("What nth digit of pi would you like (1-1024 digits)")
+pie = "".join(pie_digits.split())
+
+raw_response = input("What nth deciaml digit of pi would you like (1-1024 digits:)\n")
 
 if isinstance(raw_response, str):
     reponse = raw_response.strip().lower()
     
+if raw_response.lower().strip().isdigit():
+    processed_response = int(raw_response)
 
-if isinstance(raw_response, int) and 1 <= raw_response <= 1024: 
-    nth_char = my_string[raw_response - 1] 
+if  0 <= processed_response <= 1024: 
+    nth_char = pie[processed_response] 
+    print("")
+    time.sleep(3.14159253-2.718281828)
     print(nth_char) 
+    time.sleep(3.14159265358979323846264338327950288419716939937510/1.618033988)
     print(f"This is the {raw_response}th digit of pi :)")
     
-elif isinstance(raw_response, int):
+elif isinstance(processed_response, int):
     print("Digit is not available in the system yet :)")
     
 elif raw_response in varitations_pie:
     print("Wrong form of pi :)")
     
-elif raw_response == math.pi:
-    print("pie")
-    time.sleep(2)
-    print("I give up now :)")
-    
 time.sleep(3.14159265358979323846264338327950288419716939937510)
 print(" ")
 print("Happy Pi Day 2026! :D")
+print("Note that the 3 is counted as the 0th digit :D")
+
   
   #Each row is 50 digits :)
   #I checked :)
   #Feynman point? 999999 :)
+
+  #March 14, 2026 :D
+  #Happy Pi Day :)
